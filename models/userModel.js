@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'student_attendance'
+    host: 'b9od8ivlahiahfdewixj-mysql.services.clever-cloud.com',
+    user: 'u0yup0iyw0x3zkbp',
+    password: 'Hu6b1oVSaqRZGAYt6Us1',
+    database: 'b9od8ivlahiahfdewixj'
 }); // Assuming you have a database connection
 
 const getUserByUsername = (username, callback) => {
