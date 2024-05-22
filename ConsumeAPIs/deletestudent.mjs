@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://nodejs-v6ya.onrender.com';
 
 async function deleteStudent(token, studentId) {
   try {
