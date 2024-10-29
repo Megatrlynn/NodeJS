@@ -56,7 +56,7 @@ async function login(username, password) {
 }
 
 function promptStudentId() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     rl.question('Enter student ID to delete: ', (studentId) => {
       resolve(studentId);
     });
@@ -80,14 +80,14 @@ async function main() {
         const token = await login(adminUsername, adminPassword);
         if (token) {
           const studentId = await promptStudentId();
-          deleteStudent(token, studentId);
+          await deleteStudent(token, studentId); // Ensure deleteStudent completes before closing rl
         }
+        rl.close(); // Close readline after all prompts and deletions are done
       });
     });
   } catch (error) {
     console.error('An error occurred:', error);
-  } finally {
-    rl.close();
+    rl.close(); // Close readline on error
   }
 }
 
